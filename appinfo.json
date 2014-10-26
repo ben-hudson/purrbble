@@ -1,0 +1,27 @@
+{
+  "uuid": "ea94b1ec-afeb-4cef-b4ef-ea8f58ef7b58",
+  "shortName": "Purrbble",
+  "longName": "Purrbble",
+  "companyName": "Ben Hudson",
+  "versionCode": 1,
+  "versionLabel": "1.1",
+  "watchapp": {
+    "watchface": true
+  },
+  "appKeys": {
+    "request": 0,
+    "receive": 1
+  },
+  "resources": {
+    "media": [{
+      "type": "png",
+      "name": "IMAGE_ICON",
+      "file": "icon.png",
+      "menuIcon": true
+    },{
+      "type": "png",
+      "name": "IMAGE_LOADING",
+      "file": "loading.png"
+    }]
+  }
+}
