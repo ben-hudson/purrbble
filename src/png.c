@@ -27,11 +27,11 @@ static bool gbitmap_from_bitmap(
   gbitmap->row_size_bytes = ((width + 31) / 32 ) * 4;
   //Allocate new gbitmap array
   gbitmap->addr = malloc(height * gbitmap->row_size_bytes); 
-  gbitmap->is_heap_allocated = true;  // allows gbitmap_destroy to cleanup
   if (gbitmap->addr == NULL) {
     APP_LOG(APP_LOG_LEVEL_DEBUG, "malloc gbitmap->addr failed");
+    return false;
   }
-
+  gbitmap->is_heap_allocated = true;
 
   for(int y = 0; y < height; y++) {
     memcpy(
@@ -86,23 +86,27 @@ GBitmap* gbitmap_create_with_png_resource(uint32_t resource_id) {
   return gbitmap_ptr;
 }
 
-//Note: this frees the source data during decoding to save memory usage
+// This function will free the source memory to save on memory usage
 GBitmap* gbitmap_create_with_png_data(uint8_t *data, int data_bytes) {
   upng_t* upng = NULL;
 
   //Allocate gbitmap
   GBitmap* gbitmap_ptr = malloc(sizeof(GBitmap));
+  if (gbitmap_ptr == NULL) {
+    APP_LOG(APP_LOG_LEVEL_DEBUG, "Unable to malloc a new GBitmap!");
+    return false;
+  }
 
   upng = upng_new_from_bytes(data, data_bytes);
   if (upng == NULL) {
     APP_LOG(APP_LOG_LEVEL_DEBUG, "UPNG malloc error"); 
   }
   if (upng_get_error(upng) != UPNG_EOK) {
-    APP_LOG(APP_LOG_LEVEL_DEBUG, "UPNG Loaded:%d line:%d", 
+    APP_LOG(APP_LOG_LEVEL_DEBUG, "UPNG Loaded: Error=%d line:%d", 
       upng_get_error(upng), upng_get_error_line(upng));
   }
   if (upng_decode(upng) != UPNG_EOK) {
-    APP_LOG(APP_LOG_LEVEL_DEBUG, "UPNG Decode:%d line:%d", 
+    APP_LOG(APP_LOG_LEVEL_DEBUG, "UPNG Decode: Error=%d line:%d", 
       upng_get_error(upng), upng_get_error_line(upng));
   }
 

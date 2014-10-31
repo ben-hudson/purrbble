@@ -13,6 +13,8 @@ typedef enum {
 } AppKey;
 
 static void received_cat(DictionaryIterator *it, void *ctx) {
+  APP_LOG(APP_LOG_LEVEL_DEBUG, "Receiving cat...");
+
   Tuple *tuple = dict_read_first(it);
   char *buffer = malloc(tuple->length);
   memcpy(buffer, tuple->value->data, tuple->length);
@@ -22,6 +24,8 @@ static void received_cat(DictionaryIterator *it, void *ctx) {
 }
 
 static void request_cat(AccelAxisType axis, int32_t direction) {
+  APP_LOG(APP_LOG_LEVEL_DEBUG, "Requesting cat...");
+
   DictionaryIterator *iter;
   app_message_outbox_begin(&iter);
   dict_write_int(iter, APP_KEY_REQUEST, 0, sizeof(int), true);
@@ -38,7 +42,7 @@ static void window_load(Window *window) {
   GRect bounds = layer_get_bounds(window_layer);
 
   bitmap = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_LOADING);
-  bitmap_layer = bitmap_layer_create(bounds);
+  bitmap_layer = bitmap_layer_create((GRect) { .origin = {0, 0}, .size = {bounds.size.w, bounds.size.h - 40}});
   bitmap_layer_set_bitmap(bitmap_layer, bitmap);
   layer_add_child(window_layer, bitmap_layer_get_layer(bitmap_layer));
 
@@ -52,7 +56,6 @@ static void window_load(Window *window) {
   update_time(NULL, MINUTE_UNIT);
   tick_timer_service_subscribe(MINUTE_UNIT, update_time);
 
-  request_cat(ACCEL_AXIS_X, 0);
   accel_tap_service_subscribe(request_cat);
 }
 
