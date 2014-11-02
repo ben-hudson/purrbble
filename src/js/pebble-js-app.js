@@ -9,7 +9,7 @@ Pebble.addEventListener("appmessage", function(e) {
 });
 
 Pebble.addEventListener("showConfiguration", function(e) {
-  Pebble.openURL("http://ben-hudson.github.io/defaced?" + encodeURIComponent(JSON.stringify(localStorage)));
+  Pebble.openURL("http://ben-hudson.github.io/purrbble?" + encodeURIComponent(JSON.stringify(localStorage)));
 });
 
 Pebble.addEventListener("webviewclosed", function(e) {
