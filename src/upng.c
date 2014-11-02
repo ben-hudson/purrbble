@@ -1023,6 +1023,7 @@ upng_error upng_header(upng_t* upng)
 }
 
 /*read a PNG, the result will be in the same color type as the PNG (hence "generic")*/
+// Pebble note: We will free the source memory as long as we are done reading it to save mem
 upng_error upng_decode(upng_t* upng)
 {
 	const unsigned char *chunk;

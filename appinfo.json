@@ -3,14 +3,17 @@
   "shortName": "Purrbble",
   "longName": "Purrbble",
   "companyName": "Ben Hudson",
-  "versionCode": 1,
-  "versionLabel": "1.1",
+  "capabilities": [
+    "configurable"
+  ],
+  "versionCode": 3,
+  "versionLabel": "1.2",
   "watchapp": {
     "watchface": true
   },
   "appKeys": {
-    "request": 0,
-    "receive": 1
+    "incoming": 0,
+    "outgoing": 1
   },
   "resources": {
     "media": [{
