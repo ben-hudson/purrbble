@@ -27,8 +27,7 @@
     <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
     <script>
       function save() {
-        var settings = {}
-        settings.term = $("#term").val();
+        var settings = {};
         settings.shake = $("#shake").val();
         return settings;
       }
@@ -47,7 +46,6 @@
         });
 
         var settings = JSON.parse(decodeURIComponent(window.location.search.substring(1)));
-        $("#term").val(settings.term);
         $("#shake").val(settings.shake).slider("refresh");
       });
     </script>
