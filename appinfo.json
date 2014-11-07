@@ -12,8 +12,8 @@
     "watchface": true
   },
   "appKeys": {
-    "incoming": 0,
-    "outgoing": 1
+    "size": 0,
+    "data": 1
   },
   "resources": {
     "media": [{
