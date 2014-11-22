@@ -6,8 +6,8 @@
   "capabilities": [
     "configurable"
   ],
-  "versionCode": 4,
-  "versionLabel": "1.3",
+  "versionCode": 5,
+  "versionLabel": "1.4",
   "watchapp": {
     "watchface": true
   },

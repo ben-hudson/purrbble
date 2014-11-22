@@ -29,8 +29,8 @@ function search(term) {
   console.log("searching for " + term);
 
   var key = "YOUR FLICKR API KEY";
-  var page = Math.floor(Math.random() * 200);
-  var url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=" + key + "&text=" + term + "&per_page=1&page=" + page + "&format=json&nojsoncallback=1";
+  var page = Math.floor(Math.random() * 512);
+  var url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=" + key + "&text=" + term + "&sort=relevance&per_page=1&page=" + page + "&format=json&nojsoncallback=1";
 
   var request = new XMLHttpRequest();
   request.open("GET", url, true);
