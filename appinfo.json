@@ -6,8 +6,8 @@
   "capabilities": [
     "configurable"
   ],
-  "versionCode": 5,
-  "versionLabel": "1.4",
+  "versionCode": 6,
+  "versionLabel": "2.0",
   "watchapp": {
     "watchface": true
   },
@@ -16,15 +16,24 @@
     "data": 1
   },
   "resources": {
-    "media": [{
-      "type": "png",
-      "name": "IMAGE_ICON",
-      "file": "icon.png",
-      "menuIcon": true
-    },{
-      "type": "png",
-      "name": "IMAGE_LOADING",
-      "file": "loading.png"
-    }]
-  }
+    "media": [
+      {
+        "type": "png",
+        "name": "IMAGE_ICON",
+        "file": "icon.png",
+        "menuIcon": true
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_LOADING",
+        "file": "loading.png"
+      }
+    ]
+  },
+  "targetPlatforms": [
+    "aplite",
+    "basalt",
+    "chalk"
+  ],
+  "sdkVersion": "3"
 }
