@@ -1,39 +1,39 @@
 {
-  "uuid": "ea94b1ec-afeb-4cef-b4ef-ea8f58ef7b58",
-  "shortName": "Purrbble",
-  "longName": "Purrbble",
-  "companyName": "Ben Hudson",
-  "capabilities": [
+  "uuid":"ea94b1ec-afeb-4cef-b4ef-ea8f58ef7b58",
+  "shortName":"Purrbble",
+  "longName":"Purrbble",
+  "companyName":"Ben Hudson",
+  "capabilities":[
     "configurable"
   ],
-  "versionCode": 6,
-  "versionLabel": "2.0",
-  "watchapp": {
-    "watchface": true
+  "versionCode":6,
+  "versionLabel":"2.0",
+  "watchapp":{
+    "watchface":true
   },
-  "appKeys": {
-    "size": 0,
-    "data": 1
+  "appKeys":{
+    "size":0,
+    "data":1
   },
-  "resources": {
-    "media": [
+  "resources":{
+    "media":[
       {
-        "type": "png",
-        "name": "IMAGE_ICON",
-        "file": "icon.png",
-        "menuIcon": true
+        "type":"png",
+        "name":"IMAGE_ICON",
+        "file":"icon.png",
+        "menuIcon":true
       },
       {
-        "type": "png",
-        "name": "IMAGE_LOADING",
-        "file": "loading.png"
+        "type":"png",
+        "name":"IMAGE_LOADING",
+        "file":"loading.png"
       }
     ]
   },
-  "targetPlatforms": [
+  "targetPlatforms":[
     "aplite",
     "basalt",
     "chalk"
   ],
-  "sdkVersion": "3"
+  "sdkVersion":"3"
 }

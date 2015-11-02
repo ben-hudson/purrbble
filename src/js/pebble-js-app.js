@@ -28,7 +28,7 @@ Pebble.addEventListener("webviewclosed", function(e) {
 function search(term) {
   console.log("searching for " + term);
 
-  var key = "YOUR FLICKR API KEY";
+  var key = "4283f0a08ac557ff26c25ab8361f08a7";
   var page = Math.floor(Math.random() * 512);
   var url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=" + key + "&text=" + term + "&sort=relevance&per_page=1&page=" + page + "&format=json&nojsoncallback=1";
 
@@ -48,7 +48,7 @@ function search(term) {
 function convert(image) {
   console.log("converting " + image);
 
-  var url = "http://ec2-54-191-195-212.us-west-2.compute.amazonaws.com/api?size=144x128&image=" + image;
+  var url = "http://remote-magick.herokuapp.com/api?size=144x168&image=" + image;
 
   var request = new XMLHttpRequest();
   request.open("GET", url, true);
