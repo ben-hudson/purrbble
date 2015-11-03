@@ -31,7 +31,6 @@
     ]
   },
   "targetPlatforms":[
-    "aplite",
     "basalt",
     "chalk"
   ],

@@ -16,13 +16,14 @@ Pebble.addEventListener("webviewclosed", function(e) {
   if(e.response != "CANCELLED" && e.response != "{}") {
     var settings = JSON.parse(decodeURIComponent(e.response));
     localStorage.shake = settings.shake;
-    if(localStorage.shake == "on") {
-      search("cat");
-    }
-  } else if(JSON.stringify(localStorage) == "{}") {
-    localStorage.shake = "off";
-    search("cat");
+    // if(localStorage.shake == "on") {
+    //   search("cat");
+    // }
   }
+  // else if(JSON.stringify(localStorage) == "{}") {
+  //   localStorage.shake = "off";
+  //   search("cat");
+  // }
 });
 
 function search(term) {
@@ -45,10 +46,11 @@ function search(term) {
   request.send(null);
 }
 
-function convert(image) {
-  console.log("converting " + image);
+var sending = false;
+function convert(photo) {
+  console.log("converting " + photo);
 
-  var url = "http://remote-magick.herokuapp.com/api?size=144x168&image=" + image;
+  var url = "http://remote-magick.herokuapp.com/api?size=144x168&image=" + photo;
 
   var request = new XMLHttpRequest();
   request.open("GET", url, true);
@@ -72,7 +74,6 @@ function convert(image) {
   request.send(null);
 }
 
-var sending = false;
 function send(bytes, chunkSize) {
   var retries = 0;
   sendChunk = function(start) {
