@@ -22,17 +22,11 @@
         "name":"IMAGE_ICON",
         "file":"icon.png",
         "menuIcon":true
-      },
-      {
-        "type":"png",
-        "name":"IMAGE_LOADING",
-        "file":"loading.png"
       }
     ]
   },
   "targetPlatforms":[
-    "basalt",
-    "chalk"
+    "basalt"
   ],
   "sdkVersion":"3"
 }
